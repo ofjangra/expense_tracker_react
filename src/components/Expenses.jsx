@@ -50,7 +50,6 @@ const Expenses = () => {
     totalCreditsArray.push(formInputs.amount)
     addTotal(totalCrdits, totalCreditsArray, setTotalCredits);
     setBill(MainArray);
-
     setBillID(billID+1);
     setFormInputs({id: "", title: "", amount: "", type: ""});
   }
@@ -78,7 +77,7 @@ const addDebits = (e) =>{
                 <div className="bill" style={values.type === "debit" ? {borderLeft: "4px solid #c50b0b"} : {borderLeft: "4px solid #0eb84f"}} key={values.id}>
                   <p>{values.id}</p>
                   <p>{values.title}</p>
-                  <h2>{values.amount}</h2>
+                  <h2 style={values.type === "debit" ? {color: "#c50b0b"} : {color: "#0eb84f"}}>{values.amount}</h2>
                 </div>
                   )
                 }
